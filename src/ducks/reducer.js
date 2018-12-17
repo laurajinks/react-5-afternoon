@@ -3,7 +3,7 @@ const initialState = {
     propertyType: 'Single Family Home',
     city: '',
     propToBeUsedOn: '',
-    found: 'false',
+    found: false,
     realEstateAgent: 'false',
     cost: 0,
     downPayment: 0,
@@ -114,7 +114,7 @@ export const updateAddressOne = (address) => {
 export const updateAddressTwo = (address) => {
     return {
         type: UPDATE_ADDRESS_TWO,
-        paylaod: address
+        payload: address
     }
 }
 
@@ -125,14 +125,14 @@ export const updateAddressThree = (address) => {
     }
 }
 
-export const updateFirstName = (name) => {
+export const updateFirst = (name) => {
     return {
         type: UPDATE_FIRST_NAME,
         payload: name
     }
 }
 
-export const updateLastName = (name) => {
+export const updateLast = (name) => {
     return {
         type: UPDATE_LAST_NAME,
         payload: name
@@ -146,70 +146,86 @@ export const updateEmail = (email) => {
     }
 }
 
-function reducer(state = initialState, action){
-    switch(action.type) {
+function reducer(state = initialState, action) {
+    switch( action.type ) {
         case UPDATE_LOAN_TYPE: 
             return {
+            ...state,
             loanType: action.payload
         }
         case UPDATE_PROPERTY_TYPE: 
             return {
+            ...state,
             propertyType: action.payload
         }
         case UPDATE_CITY:
             return {
+            ...state,
             city: action.payload
         }
         case UPDATE_PROP:
             return {
+            ...state,
             propToBeUsedOn: action.payload
         }
         case UPDATE_FOUND:
             return {
+            ...state,
             found: action.payload
         }
         case UPDATE_REAL_ESTATE_AGENT:
             return {
+            ...state,
             realEstateAgent: action.payload
         }
         case UPDATE_COST:
             return {
+            ...state,
             cost: action.payload
             }
         case UPDATE_DOWN_PAYMENT:
             return {
+                ...state,
             downPayment: action.payload
             }
         case UPDATE_CREDIT:
             return {
+                ...state,
             credit: action.payload
             }
         case UPDATE_HISTORY:
             return {
+                ...state,
             history: action.payload
         }
         case UPDATE_ADDRESS_ONE:
             return {
+                ...state,
             addressOne: action.payload
             }
         case UPDATE_ADDRESS_TWO:
             return {
+                ...state,
             addressTwo: action.payload
             }
         case UPDATE_ADDRESS_THREE:
             return {
+                ...state,
             addressThree: action.payload
             }
         case UPDATE_FIRST_NAME:
             return {
+                ...state,
             firstName: action.payload
             }
         case UPDATE_LAST_NAME:
             return {
+                ...state,
             lastName: action.payload
             }
         case UPDATE_EMAIL:
             return {
+                ...state,
             email: action.payload
             }
         default: {
